@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gray-800 px-28">
+  <div class="bg-gray-800 px-6 lg:px-28">
     <FragmentsFooterProduct></FragmentsFooterProduct>
-    <div class="my-16 flex justify-between">
-      <ElementListFooter>
+    <div class="my-8 ms-[26px] lg:ms-0 lg:my-16 flex flex-wrap lg:flex-nowrap gap-7 lg:gap-0  justify-between">
+      <ElementListFooter class="mb-6 lg:mb-0">
         <template v-slot:heading> Product </template>
         <template v-slot:link>
           <li>Overview</li>
@@ -28,7 +28,7 @@
           <li>Contact</li>
         </template>
       </ElementListFooter>
-      <ElementListFooter>
+      <ElementListFooter class="mb-6 lg:mb-0">
         <template v-slot:heading> Resources </template>x``
         <template v-slot:link>
           <li>Blog</li>
@@ -52,7 +52,7 @@
         </template>
       </ElementListFooter>
 
-      <ElementListFooter>
+      <ElementListFooter class="mb-6 lg:mb-0">
         <template v-slot:heading> Social </template>
         <template v-slot:link>
           <li>Twitter</li>

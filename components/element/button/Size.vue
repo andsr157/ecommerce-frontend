@@ -8,7 +8,7 @@ defineProps({
 <template>
   <button
     :disabled="!isAvailable"
-    :class="`cursor-pointer rounded-lg w-14 h-14 text-center ${
+    :class="`cursor-pointer rounded-md lg:rounded-lg w-11 h-11 lg:w-14 lg:h-14 text-center ${
       isactive && !isAvailable ? 'bg-gray-50 text-gray-600' : ' '
     } ${
       isactive && isAvailable
@@ -20,6 +20,6 @@ defineProps({
         : ''
     }`"
   >
-    <span class="text-xl font-semibold leading-[56px]">{{ size }}</span>
+    <p class="text-xl  font-semibold lg:leading-[56px]">{{ size }}</p>
   </button>
 </template>

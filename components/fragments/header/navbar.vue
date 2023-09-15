@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-4 px-28 lg:py-2 flex justify-between gap-3 absolute w-full bg-transparent">
+  <nav class="py-4 px-6 lg:px-28 lg:py-2 flex justify-between gap-3 absolute w-full bg-transparent">
     <div class="flex items-center">
       <ElementLogo />
 
