@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="w-[456px]">
+  <div class="w-full lg:w-[456px]">
     <div class="p-5 flex flex-col gap-5 bg-white rounded-xl border-[1px] border-gray-200">
       <div>
         <div class="flex justify-between mb-1 text-gray-900">

@@ -13,24 +13,24 @@ const uri = Number(useRoute().params.id)
 </script>
 
 <template>
-  <div class="bg-white p-2 w-[762px] flex rounded-xl border-[1px] border-gray-200">
-    <div class="w-72 h-[162px] bg-gray-100 rounded-lg">
+  <div class="bg-white p-1 lg:p-2 w-full lg:w-[762px]  flex rounded-xl border-[1px] border-gray-200">
+    <div class="w-16 lg:w-72 h-16 lg:h-[162px] bg-gray-100 rounded-lg">
       <img
         :src="ProductStore.getProductById(product.id)?.thumbnail"
         alt=""
-        class=" w-full h-full object-cover"
+        class=" w-full h-full object-cover rounded-md"
         x
       />
     </div>
     <div
-      class="px-5 py-3 text-gray-900 mb-1 flex flex-col justify-between grow"
+      class="px-5 py-1 lg:py-3 text-gray-900 mb-1 flex flex-col justify-between grow"
     >
       <div class="flex justify-between">
-        <p class="font-normal">{{ product.title }}</p>
-        <h3 class="text-xl font-semibold">$.{{ product.total }}</h3>
+        <p class="font-normal w-40 lg:w-full truncate lg:overflow-visible ">{{ product.title }}</p>
+        <h3 class="text-lg lg:text-xl font-semibold">$.{{ product.total }}</h3>
       </div>
       <div class="flex justify-between gap-2 items-end">
-        <h3 class="text-gray-700 text-lg font-medium">
+        <h3 class="text-gray-700 text-sm lg:text-lg font-medium">
           Qty: {{ product.quantity }}
         </h3>
         <div
