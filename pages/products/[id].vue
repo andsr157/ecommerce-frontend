@@ -163,7 +163,7 @@ function handlerButtonColor(color: any) {
             </div>
           </div>
           <div class="w-full ">
-            <p class="text-[14px] :text-xl font-semibold leading-7 text-[#262262]">
+            <p class="text-[14px] lg:text-xl font-semibold leading-7 text-[#262262]">
               {{ product?.description }}
             </p>
           </div>

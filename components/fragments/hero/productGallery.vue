@@ -2,7 +2,7 @@
 import { Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { ProductType } from "~/type";
-const modules = [Navigation];
+const modules = [Navigation, Thumbs];
 
 const thumbsSwiper = ref(null);
 const setThumbsSwiper = (swiper: any) => {
@@ -20,40 +20,43 @@ const { product } = defineProps<{ product?: ProductType }>();
       :modules="modules"
       style="height: 546px;" 
     >
-      <SwiperSlide v-for="(image, index) in product?.images" :key="index" class="bg-red-500">
+      <SwiperSlide v-for="(image, index) in product?.images" :key="index" >
         
-        <div class="bg-gray-100 rounded-lg w-[324px] h-[546px]">
+        <div class="bg-gray-100 rounded-lg w-[324px] h-[546px] lg:w-full">
           <img
             :src="image"
             alt=""
-            class="w-full h-full object-cover mx-auto mix-blend-multiply"
+            class="w-full h-full object-fit rounded-lg mx-auto mix-blend-multiply"
           />
         </div>
       </SwiperSlide>
     </Swiper>
     <Swiper
       class="mx-auto mt-2"
+      @swiper="setThumbsSwiper"
       :slidesPerView=4
       :breakpoints="{
         '640': {
           slidesPerView: 4,
+          spaceBetween:6
         },
         '1024': {
           slidesPerView: 4,
+          spaceBetween:24 
         },
       }"
       :watchSlidesProgress="true"
-      :space-between="24"
+    
       :modules="modules"
       :loop="false"
       style="height: auto;" 
     >
       <SwiperSlide v-for="image in product?.images">
-        <div class="bg-gray-100 rounded-md w-1/4 lg:w-[132px] lg:h-[124px]">
+        <div class="bg-gray-100 rounded-md w-full lg:w-[132px] lg:h-[124px]">
           <img
             :src="image"
             alt=""
-            class="rounded-lg w-20 h-20 lg:w-full lg:h-full object-cover mix-blend-multiply"
+            class="rounded-lg w-full h-20 lg:w-full lg:h-full object-cover mix-blend-multiply"
           />
         </div>
       </SwiperSlide>
