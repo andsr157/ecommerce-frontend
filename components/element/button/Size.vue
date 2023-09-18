@@ -7,8 +7,8 @@ defineProps({
 </script>
 <template>
   <button
-    :disabled="!isAvailable"
-    :class="`cursor-pointer rounded-md lg:rounded-lg w-11 h-11 lg:w-14 lg:h-14 text-center ${
+    :disabled="!isAvailable"   
+    :class="`cursor-pointer rounded-md lg:rounded-lg w-9 h-9 lg:w-14 lg:h-14 text-center ${
       isactive && !isAvailable ? 'bg-gray-50 text-gray-600' : ' '
     } ${
       isactive && isAvailable
@@ -20,6 +20,6 @@ defineProps({
         : ''
     }`"
   >
-    <p class="text-xl  font-semibold lg:leading-[56px]">{{ size }}</p>
+    <p class="text-base lg:text-xl  font-semibold lg:leading-[56px]">{{ size }}</p>
   </button>
 </template>

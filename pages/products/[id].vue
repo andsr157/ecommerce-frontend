@@ -89,15 +89,15 @@ function handlerButtonColor(color: any) {
     <div class="px-6 lg:px-28 pt-[136px] pb-[72px]"><FragmentsHeaderProductdetail /></div>
   </div>
   <div class="px-6 lg:px-28">
-    <div class="grid lg:grid-cols-2 gap-8 pb-24">
+    <div class="grid lg:grid-cols-2 gap-8 pb-12 lg:pb-24">
       <FragmentsHeroProductGallery v-if="product" :product="product" />
       <div class="flex flex-col gap-6 lg:gap-8">
         <div class="font-semibold">
-          <h2 class=" text-[30px] text-gray-900 mb-2">{{ product?.title }}</h2>
-          <h3 class="text-primary-700 text-2xl">${{ product?.price }}</h3>
+          <h2 class="text-2xl lg:text-[30px] text-gray-900 mb-2">{{ product?.title }}</h2>
+          <h3 class="text-primary-700 text-xl lg:text-2xl">${{ product?.price }}</h3>
         </div>
         <div>
-          <p class="mb-2 font-medium text-gray-500 leading-6">Color</p>
+          <p class="text-sm lg:text-base mb-2 font-medium text-gray-500 leading-6">Color</p>
           <div class="flex  gap-4">
             <div v-for="color in prodProp.color">
               <div>
@@ -111,7 +111,7 @@ function handlerButtonColor(color: any) {
         </div>
 
         <div>
-          <p class="mb-2 font-medium text-gray-500 leading-6">Size</p>
+          <p class="text-sm lg:text-base mb-2 font-medium text-gray-500 leading-6">Size</p>
           <div class="flex  gap-4">
             <div v-for="size in prodProp.size">
               <ElementButtonSize
@@ -125,10 +125,10 @@ function handlerButtonColor(color: any) {
         </div>
 
         <div>
-          <p class="mb-2 font-medium text-gray-500 leading-6">Quantity</p>
-          <div class="flex flex-1 h-11 lg:h-14 gap-4">
+          <p class="text-sm lg:text-base mb-2 font-medium text-gray-500 leading-6">Quantity</p>
+          <div class="flex flex-1 h-9 lg:h-14 gap-4">
             <button
-              :class="`text-white w-11 lg:w-14 text-2xl font-semibold rounded-lg ${
+              :class="`text-white w-9 lg:w-14 text-2xl font-semibold rounded-lg ${
                 cartStore.inputQty <= 1 ? 'bg-gray-200 ' : 'bg-primary-600'
               }`"
               @click="decrementQty"
@@ -138,10 +138,10 @@ function handlerButtonColor(color: any) {
             <input
               type="number"
               v-model="cartStore.inputQty"
-              class="text-xl rounded-lg border-[1px] border-gray-300 w-11 lg:w-14 text-center [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+              class="text-sm lg:text-xl rounded-lg border-[1px] border-gray-300 w-9 lg:w-14 text-center [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
             />
             <button
-              :class="`text-white w-11 lg:w-14 text-2xl font-semibold rounded-lg ${
+              :class="`text-white w-9 lg:w-14 text-2xl font-semibold rounded-lg ${
                 cartStore.inputQty <= (product?.stock ?? 0)
                   ? 'bg-primary-600'
                   : 'bg-gray-200'
@@ -154,16 +154,16 @@ function handlerButtonColor(color: any) {
         </div>
 
         <div>
-          <div class="flex justify-between items-center mb-1">
-            <p class="mb-2 font-medium text-gray-500 leading-6">Description</p>
+          <div class="flex w-full justify-between items-center">
+            <p class="text-sm lg:text-base mb-2 font-medium text-gray-500 leading-6">Description</p>
             <div
-              class="p-[6px] rounded-lg border-[1px] border-primary-50 flex items-center"
+              class="p-1 lg:p-[6px] rounded-lg border-[1px] border-primary-50 flex items-center"
             >
               <img src="~/assets/icon/minus.svg" alt="" />
             </div>
           </div>
-          <div class="w-[324px] lg:w-full ">
-            <p class="text-lg :text-xl font-semibold leading-7 text-[#262262]">
+          <div class="w-full ">
+            <p class="text-[14px] :text-xl font-semibold leading-7 text-[#262262]">
               {{ product?.description }}
             </p>
           </div>

@@ -11,10 +11,11 @@ const productStore = useProductStore()
       Product List
     </h1>
     <div class="flex gap-[10px] px-6 lg:px-80">
-      <div
-        class="flex gap-2 flex-grow rounded-lg p-1 lg:p-[14px] border-[1px] border-gray-300 bg-white"
+     
+        <div
+        class="flex gap-2 flex-grow rounded-lg p-1 lg:p-[14px] border-[1px] border-gray-300 bg-white items-center"
       >
-          <img src="~/assets/icon/search.svg" alt="" />
+          <img src="~/assets/icon/search.svg" alt="" class="w-5 h-5 lg:w-auto lg:h-auto" />
        
         <input
           type="text"
@@ -22,10 +23,10 @@ const productStore = useProductStore()
           class="w-full focus:outline-0"
           v-model = productStore.searchValue 
         />
-        <p>{{ productStore.searchValue }}</p>
       </div>
+      
       <button
-        class="flex gap-2 border-[1px] border-gray-300 bg-white px-4 py-[14px] rounded-lg"
+        class="flex shrink-0 gap-2 border-[1px] border-gray-300 bg-white px-4 py-[14px] rounded-lg"
       >
         <img src="~/assets/icon/filter.svg" alt="" />
         <p class="text-sm font-semibold text-gray-700">Sort by</p>
