@@ -6,6 +6,8 @@ const allProducts = computed(() => cartStore.getAllProducts)
 onMounted(async () => {
   await cartStore.getCarts()
 })
+
+const isShowNav = ref(false)
 </script>
 
 <template>
@@ -58,9 +60,35 @@ onMounted(async () => {
           />
         </div>
       </div>
-      <div class="block lg:hidden">
+      <div class="block lg:hidden cursor-pointer" @click="isShowNav = !isShowNav">
         <img src="../../../assets/icon/nav-toogle.png" alt="" />
       </div>
     </div>
   </nav>
+  <div v-if="isShowNav" class="flex flex-col justify-end p-8 pb-40 absolute w-full h-screen z-50  bg-white transition ease-in-out">
+    <ul class="flex flex-col text-gray-800 font-bold text-3xl gap-4">
+      <div @click="isShowNav = !isShowNav" class="cursor-pointer absolute top-2 right-2 text-3xl p-4">X</div>
+      <li>
+        <NuxtLink to="/">
+          Home
+        </NuxtLink> 
+      </li>
+      <li>
+        <NuxtLink to="/products">
+          Product
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/cart">
+          <div class="flex gap-1">
+            <img src="~/assets/icon/shopping-cart-2.svg" alt="" />
+            <p>Keranjang</p>
+          </div>
+        </NuxtLink>
+      </li>
+      <li>
+          About
+      </li>
+    </ul>
+  </div>
 </template>
