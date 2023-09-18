@@ -13,7 +13,7 @@ definePageMeta({
 
 // const { data: product } = await useFetch<ProductType>(uri)
 
-const product = productStore.getProductById(Number(id))
+const product = productStore.getProductById(Number(id)) || null
 
 onMounted(async() => {
   await productStore.getProducts()

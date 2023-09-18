@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { useProductStore } from "~/store/productStore"
-import { useCartStore } from "~/store/cartStore"
-const cartStore = useCartStore()
 
 const productStore = useProductStore()
 definePageMeta({
@@ -10,6 +8,10 @@ definePageMeta({
 
 onMounted(() => {
   productStore.getProducts()
+})
+
+watch(() => productStore.searchValue, () => {
+  productStore.getProductByTitle;
 })
 </script>
 
@@ -21,10 +23,11 @@ onMounted(() => {
         <ElementListCategory>
           <template v-slot:heading> Category</template>
           <template v-slot:link>
-            <ElementInputCheck name="fashion" />
-            <ElementInputCheck name="gadget" />
-            <ElementInputCheck name="craft" />
-            <ElementInputCheck name="food" />
+            <ElementInputCheck name="smartphones" />
+            <ElementInputCheck name="laptops" />
+            <ElementInputCheck name="fragrances" />
+            <ElementInputCheck name="skincare" />
+            <ElementInputCheck name="groceries" />
           </template>
         </ElementListCategory>
   
@@ -34,7 +37,6 @@ onMounted(() => {
             <ElementInputCheck name="termurah" />
             <ElementInputCheck name="termahal" />
             <ElementInputCheck name="diskon" />
-            <ElementInputCheck name="flashsale" />
           </template>
         </ElementListCategory>
       </div>

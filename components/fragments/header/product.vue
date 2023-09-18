@@ -1,3 +1,10 @@
+<script setup lang="ts">
+
+import { useProductStore } from "~/store/productStore"
+
+const productStore = useProductStore()
+</script>
+
 <template>
   <div class="pt-[136px] pb-[72px] bg-gradient-to-b from-sky-100 to-white">
     <h1 class="text-center text-[30px] lg:text-[40px] font-semibold leading-14 mb-6">
@@ -13,7 +20,9 @@
           type="text"
           placeholder="search"
           class="w-full focus:outline-0"
+          v-model = productStore.searchValue 
         />
+        <p>{{ productStore.searchValue }}</p>
       </div>
       <button
         class="flex gap-2 border-[1px] border-gray-300 bg-white px-4 py-[14px] rounded-lg"
