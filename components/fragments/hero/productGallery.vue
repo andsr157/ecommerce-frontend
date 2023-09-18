@@ -13,16 +13,16 @@ const { product } = defineProps<{ product?: ProductType }>();
 </script>
 
 <template>
-  <div class="w-[324px] lg:w-full">
+  <div class="w-[348px] lg:w-full">
     <Swiper
       :thumbs="{ swiper: thumbsSwiper }"
       :slides-per-view="1"
       :modules="modules"
-      style="height: 546px;" 
+      style="height: 400px;" 
     >
       <SwiperSlide v-for="(image, index) in product?.images" :key="index" >
         
-        <div class="bg-gray-100 rounded-lg w-[324px] h-[546px] lg:w-full">
+        <div class="bg-gray-100 rounded-lg w-full h-full  lg:h-[546px] lg:w-full">
           <img
             :src="image"
             alt=""
@@ -32,27 +32,25 @@ const { product } = defineProps<{ product?: ProductType }>();
       </SwiperSlide>
     </Swiper>
     <Swiper
-      class="mx-auto mt-2"
+      class="mx-auto mt-2 justify-between overflow-hidden"
       @swiper="setThumbsSwiper"
       :slidesPerView=4
       :breakpoints="{
         '640': {
           slidesPerView: 4,
-          spaceBetween:6
         },
         '1024': {
           slidesPerView: 4,
-          spaceBetween:24 
         },
       }"
       :watchSlidesProgress="true"
-    
+      :space-between="24"
       :modules="modules"
       :loop="false"
       style="height: auto;" 
     >
       <SwiperSlide v-for="image in product?.images">
-        <div class="bg-gray-100 rounded-md w-full lg:w-[132px] lg:h-[124px]">
+        <div class="bg-gray-100 rounded-md w-20 lg:w-[132px] lg:h-[124px]">
           <img
             :src="image"
             alt=""

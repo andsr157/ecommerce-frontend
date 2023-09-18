@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="flex gap-10 items-center justify-between">
+    <div class="flex items-center justify-between">
       <div>
         <ElementButtonBack />
       </div>
